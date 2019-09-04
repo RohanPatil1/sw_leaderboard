@@ -1,54 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 80.0,
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          //Fetch List for leaderboard of type User
-
-          //Dummy Data
-          User(
-            pic: "assets/profile.png",
-            name: "SouL Mortal",
-            level: 141,
-            points: 1034,
-            rank: 1,
-          ),
-          User(
-            pic: "assets/profile.png",
-            name: "SouL Mortal",
-            level: 134,
-            points: 981,
-            rank: 2,
-          ),
-          User(
-            pic: "assets/profile.png",
-            name: "SouL Mortal",
-            level: 129,
-            points: 944,
-            rank: 3,
-          ),
-          User(
-            pic: "assets/profile.png",
-            name: "SouL Mortal",
-            level: 127,
-            points: 942,
-            rank: 4,
-          ),
-          User(
-            pic: "assets/profile.png",
-            name: "SouL Mortal",
-            level: 112,
-            points: 860,
-            rank: 5,
-          ),
-        ],
-      ),
+      child: StreamBuilder(
+          stream: Firestore.instance.collection('leaderboard').snapshots(),
+          builder: (context, snapshot) {
+            return ListView.builder(
+                itemCount: snapshot.data.documents.length,
+                itemBuilder: (context, index) {
+                  return User(
+                    name: snapshot.data.documents[index].data['name'],
+                    pic: snapshot.data.documents[index].data['profile_pic'],
+                    level: snapshot.data.documents[index].data['level_number'],
+                    rank: snapshot.data.documents[index].data['rank'],
+                    points: snapshot.data.documents[index].data['points'],
+                    level_descrip:
+                        snapshot.data.documents[index].data['level_descrip'],
+                    badge: snapshot.data.documents[index].data['badge'],
+                    created: snapshot.data.documents[index].data['created'],
+                    updated: snapshot.data.documents[index].data['updated'],
+                  );
+                });
+          }),
     );
   }
 }
@@ -57,10 +35,23 @@ class User extends StatelessWidget {
   final String pic;
   final String name;
   final int level;
-  final int points;
   final int rank;
+  final int points;
+  final String level_descrip;
+  final String created;
+  final String updated;
+  final String badge;
 
-  User({this.pic, this.name, this.level, this.points, this.rank});
+  User(
+      {this.pic,
+      this.name,
+      this.level,
+      this.rank,
+      this.points,
+      this.level_descrip,
+      this.created,
+      this.updated,
+      this.badge});
 
   @override
   Widget build(BuildContext context) {
@@ -71,10 +62,14 @@ class User extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ListTile(
+              onTap: () {
+                _historyDialog(context);
+              },
               leading: CircleAvatar(
                 minRadius: 20.0,
                 maxRadius: 30.0,
-                backgroundImage: AssetImage(pic),
+                backgroundImage: NetworkImage(pic),
+                backgroundColor: Colors.transparent,
               ),
               title: Padding(
                 padding: const EdgeInsets.only(left: 8.0),
@@ -102,7 +97,7 @@ class User extends StatelessWidget {
                   animation: true,
                   lineHeight: 20.0,
                   animationDuration: 2500,
-                  percent: _getPercent(rank),
+                  percent: 1,
                   center: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
@@ -117,7 +112,7 @@ class User extends StatelessWidget {
                             ]),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left:3.0),
+                        padding: const EdgeInsets.only(left: 3.0),
                         child: Text(
                           "$points",
                           style: TextStyle(color: Colors.white),
@@ -141,29 +136,29 @@ class User extends StatelessWidget {
                 height: 45.0,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xfffa52a6),
+                  color: Colors.blueAccent,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(2.0,4.0,2.0,2.0),
+                      padding: const EdgeInsets.fromLTRB(2.0, 4.0, 2.0, 2.0),
                       child: Text(
                         "LVL",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13.0,
-
-                            ),
+                          color: Colors.white,
+                          fontSize: 13.0,
+                        ),
                       ),
                     ),
-                    Text("$level",style: TextStyle(
-
-                      color: Colors.white,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-
-                    ),),
+                    Text(
+                      "$level",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -175,14 +170,14 @@ class User extends StatelessWidget {
     );
   }
 
-  double _getPercent(int rank) {
-    var percent;
-    if (rank == 1) {
-      percent = 1.0;
-      return percent;
-    }
-    return (1.0 - rank / 10);
-  }
+//  double _getPercent(int rank) {
+//    var percent;
+//    if (rank == 1) {
+//      percent = 1.0;
+//      return percent;
+//    }
+//    return (1.0 - rank / 10);
+//  }
 
   LinearGradient _getGradient(int rank) {
     switch (rank) {
@@ -235,6 +230,91 @@ class User extends StatelessWidget {
           break;
         }
     }
+  }
+
+  Future<bool> _historyDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("History"),
+            content: Container(
+              child: StreamBuilder(
+                stream: Firestore.instance
+                    .collection('leaderboard_history')
+                    .snapshots(),
+                builder: (context, snapshots) {
+                  //NOTE : We use 'uid'(From Auth)instead of index while fetching a specific document for that particular user.
+                  String email = snapshots.data.documents[0].data['email'];
+                  String created = snapshots.data.documents[0].data['created'];
+                  String updated = snapshots.data.documents[0].data['updated'];
+                  int total_pts =
+                      snapshots.data.documents[0].data['total_points'];
+                  String reason =
+                      snapshots.data.documents[0].data['reason_points'];
+
+                  return Container(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              "Email : ",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            Text(email),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              "Reason : ",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            Expanded(
+                                child: Text(
+                              reason,
+                              maxLines: 3,
+                            )),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              "Total Points : ",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            Text(total_pts.toString()),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              "Created On : ",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            Text(created),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              "Updated On  : ",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            Text(updated),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          );
+        });
   }
 }
 

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a25ecb6-c778-4234-9f1f-31a1e8251a87" name="Default Changelist" comment="" />
+    <list default="true" id="0a25ecb6-c778-4234-9f1f-31a1e8251a87" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/userlist.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/userlist.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -12,13 +19,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_21" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+            <state relative-caret-position="690">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -26,23 +38,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="86" column="33" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/userlist.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="149" column="62" selection-start-line="149" selection-start-column="62" selection-end-line="149" selection-end-column="62" />
+            <state relative-caret-position="253">
+              <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#4929#6088#0" />
+                <element signature="e#7313#10626#0" />
               </folding>
             </state>
           </provider>
@@ -63,14 +66,23 @@
       <find>name</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lib/user.dart" />
         <option value="$PROJECT_DIR$/test/widget_test.dart" />
-        <option value="$PROJECT_DIR$/lib/userlist.dart" />
+        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/leaderboard_historyUI.dart" />
+        <option value="$PROJECT_DIR$/lib/history.dart" />
+        <option value="$PROJECT_DIR$/lib/Utils.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/userlist.dart" />
       </list>
     </option>
   </component>
@@ -80,12 +92,13 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -113,22 +126,38 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="sw_lboard" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="G:\StudioProjects\sw_lboard" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="sw_lboard" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="G:\StudioProjects\sw_lboard" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crud_app" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\StudioProjects\sw_lboard\fonts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\StudioProjects\sw_lboard\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\StudioProjects\sw_lboard\android\app" />
+      <recent name="G:\StudioProjects\sw_lboard\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -157,7 +186,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
@@ -169,9 +198,9 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32954547" />
+      <window_info anchor="bottom" id="Find" weight="0.32914925" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.66387725" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
@@ -180,6 +209,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32914925" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -199,30 +229,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/google-services.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="86" column="33" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="33" />
+        <state relative-caret-position="23">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/userlist.dart">
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="149" column="62" selection-start-line="149" selection-start-column="62" selection-end-line="149" selection-end-column="62" />
+        <state relative-caret-position="-23">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/flutter/bin/cache/dart-sdk/lib/async/async.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/leaderboard_historyUI.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Utils.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/history.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#4929#6088#0" />
+            <element signature="e#91#424#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        <state relative-caret-position="690">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/userlist.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#7313#10626#0" />
           </folding>
         </state>
       </provider>

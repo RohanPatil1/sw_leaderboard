@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "938464541382",
+    "firebase_url": "https://swlboard.firebaseio.com",
+    "project_id": "swlboard",
+    "storage_bucket": "swlboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938464541382:android:e4f286f33d890852",
+        "android_client_info": {
+          "package_name": "com.rohan.sw_lboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938464541382-lan7ds4vruq20lnril8ac51aus6jm16p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rohan.sw_lboard",
+            "certificate_hash": "424c07c28b0b0cb03b4bdd4c530eae34ac2c7903"
+          }
+        },
+        {
+          "client_id": "938464541382-68jvht5pmnrfm1jjfi5jqqfeinb79d5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBogicPx1K8hUYjxs2QGM0JILAqrhq4QVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938464541382-68jvht5pmnrfm1jjfi5jqqfeinb79d5e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
